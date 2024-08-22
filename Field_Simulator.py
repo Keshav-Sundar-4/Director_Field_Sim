@@ -30,7 +30,7 @@ L = -inner(Q, v)*dx + K*inner(grad(Q), grad(v))*dx
 # Include the interaction term (simplified for illustrative purposes)
 c = Expression('sin(2*pi*x[0])', degree=2)  # Simulated morphogen concentration
 L += beta*inner(as_tensor(((grad(c)[0]*grad(c)[0], grad(c)[0]*grad(c)[1]), 
-                           (grad(c)[1]*grad(c)[0], grad(c)[1]*grad(c)[1])), v)*dx
+                           (grad(c)[1]*grad(c)[0], grad(c)[1]*grad(c)[1])), v))*dx
 
 # Assemble system
 Q_new = Function(V)
